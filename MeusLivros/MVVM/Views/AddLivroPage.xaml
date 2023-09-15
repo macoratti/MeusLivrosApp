@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MeusLivros.MVVM.Views.AddLivroPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:MeusLivros.MVVM.ViewModels"
+    Title="Incluir Livro">
+
+    <VerticalStackLayout Margin="20">
+        <Entry Placeholder="Titulo" Text="{Binding LivroTitulo}" />
+        <Entry Placeholder="Autor" Text="{Binding LivroAutor}" />
+        <Entry Placeholder="Imagem" Text="{Binding LivroImagemUrl}" />
+        <Entry Placeholder="No. de Páginas" Text="{Binding LivroPaginas}" />
+        <Entry Placeholder="Emprestado para..." Text="{Binding LivroEmprestadoPara}" />
+        <HorizontalStackLayout>
+            <CheckBox IsChecked="{Binding LivroLeituraConcluida}" />
+            <Label Text="Você concluiu a leitura deste livro ?" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+        <Button
+            Background="gold"
+            Command="{Binding AddLivroCommand}"
+            FontAttributes="Bold"
+            Text="Novo Livro"
+            TextColor="Black" />
+    </VerticalStackLayout>
+
+</ContentPage>

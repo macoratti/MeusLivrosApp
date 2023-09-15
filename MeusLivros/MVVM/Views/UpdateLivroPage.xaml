@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MeusLivros.MVVM.Views.UpdateLivroPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:MeusLivros.MVVM.ViewModels"
+    Title="Atualizar Livro"
+    x:DataType="viewmodel:UpdateLivroViewModel">
+
+    <VerticalStackLayout Margin="20">
+        <Entry Placeholder="Titulo" Text="{Binding Livro.Titulo}" />
+        <Entry Placeholder="Autor" Text="{Binding Livro.Autor}" />
+        <Entry Placeholder="Imagem" Text="{Binding Livro.ImagemUrl}" />
+        <Entry Placeholder="No. de Páginas" Text="{Binding Livro.Paginas}" />
+        <Entry Placeholder="Emprestado para..." Text="{Binding Livro.EmprestadoPara}" />
+        <HorizontalStackLayout>
+            <CheckBox IsChecked="{Binding Livro.LeituraConcluida}" />
+            <Label Text="Já concluiu a leitura deste livro ?" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+        <Button
+            Background="#4A88DA"
+            Command="{Binding UpdateLivroCommand}"
+            Text="Atualizar Livro"
+            TextColor="#eff5f3" />
+    </VerticalStackLayout>
+
+</ContentPage>
